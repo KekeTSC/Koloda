@@ -25,7 +25,6 @@ class CustomKolodaView: KolodaView {
             let height = width * defaultHeightRatio
             let yOffset: CGFloat = topOffset
             let frame = CGRect(x: xOffset, y: yOffset, width: width, height: height)
-            
             return frame
         } else if index == 1 {
             let horizontalMargin = -self.bounds.width * backgroundCardHorizontalMarginMultiplier
