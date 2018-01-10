@@ -36,14 +36,17 @@ class BackgroundAnimationViewController: UIViewController {
     //MARK: IBActions
     @IBAction func leftButtonTapped() {
         kolodaView?.swipe(.left)
+        print("leftButtonTapped")
     }
     
     @IBAction func rightButtonTapped() {
         kolodaView?.swipe(.right)
+        print("rightButtonTapped")
     }
     
     @IBAction func undoButtonTapped() {
         kolodaView?.revertAction()
+        print("undoButtonTapped")
     }
 }
 
@@ -52,6 +55,7 @@ extension BackgroundAnimationViewController: KolodaViewDelegate {
     
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
         kolodaView.resetCurrentCardIndex()
+        print("resetCards")
     }
     
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {

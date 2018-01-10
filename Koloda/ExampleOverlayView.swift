@@ -27,6 +27,7 @@ class ExampleOverlayView: OverlayView {
         didSet {
             switch overlayState {
             case .left? :
+                print("ExampleLeft")
                 overlayImageView.image = UIImage(named: overlayLeftImageName)
             case .right? :
                 overlayImageView.image = UIImage(named: overlayRightImageName)
