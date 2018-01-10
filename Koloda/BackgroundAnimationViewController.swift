@@ -4,7 +4,6 @@
 //
 //  Created by Eugene Andreyev on 7/11/15.
 //  Copyright (c) 2015 CocoaPods. All rights reserved.
-//
 
 import UIKit
 import Koloda
@@ -59,7 +58,7 @@ extension BackgroundAnimationViewController: KolodaViewDelegate {
     }
     
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
-        UIApplication.shared.openURL(URL(string: "https://yalantis.com/")!)
+        //UIApplication.shared.openURL(URL(string: "https://yalantis.com/")!)
     }
     
     func kolodaShouldApplyAppearAnimation(_ koloda: KolodaView) -> Bool {
@@ -79,6 +78,14 @@ extension BackgroundAnimationViewController: KolodaViewDelegate {
         animation?.springBounciness = frameAnimationSpringBounciness
         animation?.springSpeed = frameAnimationSpringSpeed
         return animation
+    }
+    
+    func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
+        if direction == .left {
+            print("left\(index)")
+        } else if direction == .right {
+            print("right\(index)")
+        }
     }
 }
 
